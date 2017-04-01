@@ -17,7 +17,7 @@ public class Main {
     public static void main(String args[])
     {
         WebDriver driver;
-        System.setProperty("webdriver.gecko.driver", "D:\\My_Project\\geckodriver.exe");
+        System.setProperty("webdriver.gecko.driver", "geckodriver.exe");
         driver =new FirefoxDriver();
 
         driver.get("https://playoverwatch.com/ko-kr/game/patch-notes/pc/");
