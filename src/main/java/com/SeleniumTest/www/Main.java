@@ -23,12 +23,27 @@ public class Main {
         driver.get("https://playoverwatch.com/ko-kr/game/patch-notes/pc/");
 
         List<WebElement> posts  = driver.findElements(By.className("patch-notes-body"));
+        //List<WebElement> post2  = driver.findElements(By.cssSelector("h2"));
         List<String> postsContents = new ArrayList<String>();
-
+/*
+        for(WebElement e : post2)
+        {
+            System.out.println(e.getCssValue("h2"));
+            String tmp = e.getText();
+            System.out.println("1 " + tmp);
+        }
+        */
+        int i = 0;
         for(WebElement e : posts)
         {
             String tmp = e.getText();
+            List<WebElement> post2 = e.findElements(By.cssSelector("h2"));
+            for(WebElement k : post2)
+            {
+                System.out.println("h2 : " + i + k.getText());
+            }
             postsContents.add(tmp);
+            i++;
         }
         for(String e : postsContents)
         {
